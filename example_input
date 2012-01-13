@@ -1,8 +1,8 @@
-0.5,     30.0,    First Thing
-30.5,    60.0,    Second Thing
-60.5,    75.0,    Example Text
-75.5,    95.0,    Things happen
-95.5,    215.0,   Exercise!
-215.5,   275.0,   Sleeping
-275.5,   335.0,   Strange Evnts
-335.5,   360.0,   Asdfdfff
+0.5;     30.0;    rgba(135,206,135,0.85); First Thing
+30.5;    60.0;    rgba(135,106,135,0.85); Second Thing
+60.5;    75.0;    rgba(235,206,135,0.85); Example Text
+75.5;    95.0;    rgba(235,106,135,0.85); Things happen
+95.5;    215.0;   rgba(135,206,235,0.85); Exercise!
+215.5;   275.0;   rgba(135,106,235,0.85); Sleeping
+275.5;   335.0;   rgba(235,206,235,0.85); Strange Evnts
+335.5;   360.0;   rgba(235,106,235,0.85); Asdfdfff
