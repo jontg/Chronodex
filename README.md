@@ -8,7 +8,12 @@ the QuickMagick gem as:
 	sudo gem install quick_magick
 
 This gem is a slim wrapper around ImageMagick, which is used to composite and
-generate the resulting images.
+generate the resulting images.  Make sure that the gem is properly linked in
+
+	export RUBYOPT="${RUBYOPT} rubygems"
+
+or whatever else works (suggestions for making installation more general is
+greatly appreciated!).
 
 ## Execution
 Generate images
@@ -27,10 +32,13 @@ parameters are semi-colon delimited (';'), and are:
 3. [Color][] of the wedge, a format that ImageMagick understands.
 4. Name of the task (optional).
 
+An example input file can be found at [Example][].
+
 ## Credits
-Inspired by [Scription](http://scription.typepad.com)'s [Chronodex][].  I wanted
-to put together a small tool to generate these overlays based on a simple text
-input.
+Inspired by [Scription](http://scription.typepad.com)'s amazing [Chronodex][].
+I wanted to put together a small tool to generate these overlays based on a
+simple text input.
 
 [Chronodex]: http://scription.typepad.com/blog/2011/11/scription-chronodex-weekly-planner-2012-free-download-with-the-cost-of-a-prayer.html
 [Color]: http://www.imagemagick.org/script/color.php
+[Example]: https://github.com/jontg/Chronodex/blob/master/example_input
