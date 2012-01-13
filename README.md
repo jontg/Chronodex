@@ -21,6 +21,7 @@ Which generates a transparent overlay ("OVERLAY.png") and the final image
 ## Formatting
 Each line of the input file represents one wedge of the [Chronodex][].  The
 parameters are semi-colon delimited (';'), and are:
+
 1. Start 'time' of the task (in degrees).
 2. End 'time' of the task (in degrees).
 3. [Color][] of the wedge, a format that ImageMagick understands.
