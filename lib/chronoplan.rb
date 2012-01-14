@@ -43,7 +43,7 @@ class Chronoplan
 			overlay.draw_polygon(cone)
 		end
 
-		overlay.draw_image("Dst_Out", 0, 0, 0, 0, "\\\"#{ROOT}/images/Hole.png\\\"")
+		overlay.draw_image("Dst_Out", 0, 0, 0, 0, %Q{\\"#{ROOT}/images/Hole.png\\"})
 		overlay.convert("OVERLAY.png")
 
 		image.draw_image("Over",0,0,0,0,"OVERLAY.png")
