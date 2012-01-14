@@ -42,13 +42,11 @@ class Chronoplan
 			overlay.draw_arc(box[0], box[1], box[2], box[3], start_arc_time, end_arc_time)
 			overlay.draw_polygon(cone)
 		end
-		overlay.display
 
-		overlay.draw_image("Dst_Out", 0, 0, 0, 0, "#{ROOT}/images/Hole.png")
+		overlay.draw_image("Dst_Out", 0, 0, 0, 0, "\\\"#{ROOT}/images/Hole.png\\\"")
 		overlay.convert("OVERLAY.png")
 
 		image.draw_image("Over",0,0,0,0,"OVERLAY.png")
-		puts image.command_line
 		image.convert("output.png")
 	end
 end # class
