@@ -1,0 +1,91 @@
+#!/usr/bin/env ruby
+
+#=------------------------------------------------------------------------------= Requirements =--=#
+# Ruby Built-in
+require 'optparse'
+require 'time'
+
+# Lib
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'chronoplan'
+
+#=------------------------------------------------------------------------------------------------=#
+
+class ChronoplanRunner
+	#=-------------------------------------------------------------------------------= Constants =--=#
+	VERSION = "1.0.0"
+
+	#=---------------------------------------------------------------------------------= Mix-ins =--=#
+	
+	#=------------------------------------------------------------------------= ChronoplanRunner =--=#
+	
+	def initialize
+		# Set defaults
+		@options = {
+		}
+		parse_options
+		
+	end
+
+	def start
+		@stopping = false
+		run
+	end
+
+	def stop
+		exit 1 if @stopping ; @stopping = true # Kill if stop is required twice
+		$stderr.puts "Sending shutdown command to processor main loop."
+	end
+
+	private #=--------------------------------------------------------------------------------------=#
+	
+	def run
+		chronoplan = Chronoplan.new @options[:file]
+		chronoplan.process
+	end
+
+	protected #=------------------------------------------------------------------------------------=#
+
+	def parse_options
+		# Specify options
+		opts = OptionParser.new do |opts|
+			opts.banner = "Usage: #{$0} [options]"
+			opts.separator ''
+			opts.separator 'Options:'
+			opts.on_tail('--version', 'Show version')            { output_version ; exit 0 }
+			opts.on_tail('-h', '--help', 'Show this message')    { puts opts ; exit 0 }
+		end
+		opts.parse! rescue puts opts and exit 1 # Parse options with fail catch and message
+
+		# Pull file argument
+		@options[:file] ||= ARGV.shift
+		if @options[:file].nil?
+			$stderr.puts "Error: You must specify an input file!"
+			$stderr.puts opts
+			exit 1
+		end
+		
+	end
+
+	def output_version
+		puts "#{File.basename(__FILE__)} version #{VERSION}"
+	end
+	
+end
+
+#=------------------------------------------------------------------------------------------------=#
+
+# Setup and Run
+processor = ChronoplanRunner.new
+
+Signal.trap RUBY_PLATFORM =~ /win32/ ? 'KILL' : 'TERM' do
+	$stderr.puts "Received stop signal..."
+	processor.stop
+end
+
+Signal.trap 'INT' do
+	$stderr.puts "Received stop signal..."
+	processor.stop
+end
+
+processor.start

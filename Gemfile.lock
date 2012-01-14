@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    quick_magick (0.8.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  quick_magick
