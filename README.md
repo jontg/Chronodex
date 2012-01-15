@@ -1,24 +1,19 @@
 # Command-line Chronodex image generation
 This was put together to automatically generate coloring for [Chronodex][].
+Example 
 
 ## Installation
-Make sure you have ruby and libpng installed.  Once you have done so, install
-the QuickMagick gem as:
+This ruby script is a slim wrapper around QuickMagick, which are the python
+extensions to work with [ImageMagick][].  Be sure to install [ImageMagick][]
+(and ruby!) before tring to run this.
 
-	sudo gem install quick_magick
-
-This gem is a slim wrapper around ImageMagick, which is used to composite and
-generate the resulting images.  Make sure that the gem is properly linked in
-
-	export RUBYOPT="${RUBYOPT} rubygems"
-
-or whatever else works (suggestions for making installation more general is
-greatly appreciated!).
+Suggestions for making installation, usage and usability more general is
+greatly appreciated!
 
 ## Execution
 Generate images
 
-	ruby script.rb example_input
+	bin/chronoplan example/schedule_sample.txt
 
 Which generates a transparent overlay ("OVERLAY.png") and the final image
 ("output.png").
@@ -39,6 +34,7 @@ Inspired by [Scription](http://scription.typepad.com)'s amazing [Chronodex][].
 I wanted to put together a small tool to generate these overlays based on a
 simple text input.
 
+[ImageMagick]: http://www.imagemagick.org/
 [Chronodex]: http://scription.typepad.com/blog/2011/11/scription-chronodex-weekly-planner-2012-free-download-with-the-cost-of-a-prayer.html
 [Color]: http://www.imagemagick.org/script/color.php
-[Example]: https://github.com/jontg/Chronodex/blob/master/example_input
+[Example]: https://github.com/jontg/Chronodex/blob/master/example/schedule_sample.txt
