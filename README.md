@@ -1,6 +1,5 @@
 # Command-line Chronodex image generation
 This was put together to automatically generate coloring for [Chronodex][].
-Example 
 
 ## Installation
 This ruby script is a slim wrapper around QuickMagick, which are the python
