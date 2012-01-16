@@ -14,7 +14,6 @@ class Chronoplan
 
 	def process
 		puts "Processing '#{@input_file}'."
-		# output_base = File.join(File.dirname(@input_file), File.basename(@input_file))
 		output_base = @input_file[0..-(File.extname(@input_file).length + 1)]
 
 		image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
