@@ -1,52 +1,58 @@
-require 'rubygems'
-require 'quick_magick'
+#require 'rubygems'
+require 'erb'
+#require 'quick_magick'
 
 class Chronoplan
 	# Constants
 	RADIUS = { 0 => 54, 1 => 72, 2 => 90, -1 => 36 }
+        CENTERX=107
+        CENTERY=102
+        INNER_RADIUS = RADIUS[-1]
 	ROOT = File.expand_path(File.join(File.dirname(__FILE__), "..")) # Get the root directory
+        TEMPLATE = %q{
+            push graphic-context
+                stroke 'none'
+                fill '<%= rgba_string %>'
+                path 'M <%= CENTERX %> <%= CENTERY %>
+                      m <%=  INNER_RADIUS * Math.cos(start_arc_time) %>
+                        <%= -INNER_RADIUS * Math.sin(start_arc_time) %>
+                      l <%=  (outer_radius-INNER_RADIUS) * Math.cos(start_arc_time) %>
+                        <%= -(outer_radius-INNER_RADIUS) * Math.sin(start_arc_time) %>
+                      a <%= outer_radius %>,<%= outer_radius %> 0
+                        <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
+                        <%= outer_radius * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
+                        <%= -outer_radius * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>
+                      l <%=  (INNER_RADIUS-outer_radius) * Math.cos(end_arc_time) %>
+                        <%= -(INNER_RADIUS-outer_radius) * Math.sin(end_arc_time) %>
+                      a <%= INNER_RADIUS %>,<%= INNER_RADIUS %> 0
+                        <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,0
+                        <%=  INNER_RADIUS * (Math.cos(start_arc_time) - Math.cos(end_arc_time)) %>,
+                        <%= -INNER_RADIUS * (Math.sin(start_arc_time) - Math.sin(end_arc_time)) %>
+                      z'
+            pop graphic-context
+        }
 
 	def initialize(input_file)
 		@input_file = input_file	
 	end
 
 	def process
-		puts "Processing '#{@input_file}'."
+		# puts "Processing '#{@input_file}'."
+		# image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
 
-		image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
-		overlay = QuickMagick::Image.solid(image.width, image.height)
-
-		overlay.append_to_operators("transparent", "white")
-		overlay.append_to_operators("stroke", "none")
-
+                puts "push graphic-context"
+                puts "viewbox 0 0 214 204"
+                templ = ERB.new(TEMPLATE)
 		File.foreach(@input_file) do |line|
 			parsed = line.split(";").map { |tmp| tmp.strip }
-			start_arc_time = parsed[0].to_f
-			end_arc_time   = parsed[1].to_f
+			start_arc_time = -Math::PI / 180 * parsed[0].to_f
+			end_arc_time   = -Math::PI / 180 * parsed[1].to_f
 			rgba_string = parsed[2]
 
-			overlay.append_to_operators("fill", rgba_string)
-			outer_radius   = (start_arc_time.modulo(90) / 30).floor
-
-			box  = [107 - RADIUS[outer_radius],
-			        102 - RADIUS[outer_radius],
-			        107 + RADIUS[outer_radius],
-			        102 + RADIUS[outer_radius]]
-
-			cone = [107, 102,
-			       (107+(RADIUS[outer_radius] - 0.5) * Math.cos(Math::PI / 180 * start_arc_time)),
-			       (102+(RADIUS[outer_radius] - 0.5) * Math.sin(Math::PI / 180 * start_arc_time)),
-			       (107+(RADIUS[outer_radius] - 0.5) * Math.cos(Math::PI / 180 * end_arc_time)),
-			       (102+(RADIUS[outer_radius] - 0.5) * Math.sin(Math::PI / 180 * end_arc_time))]
-
-			overlay.draw_arc(box[0], box[1], box[2], box[3], start_arc_time, end_arc_time)
-			overlay.draw_polygon(cone)
+			outer_radius_index = (parsed[0].to_f.modulo(90) / 30).floor
+                        outer_radius = RADIUS[outer_radius_index]
+                        puts templ.result(binding)
 		end
-
-		overlay.draw_image("Dst_Out", 0, 0, 0, 0, %Q{\\"#{ROOT}/images/Hole.png\\"})
-		overlay.convert("OVERLAY.png")
-
-		image.draw_image("Over",0,0,0,0,"OVERLAY.png")
-		image.convert("output.png")
+                puts "pop graphic-context"
 	end
 end # class
