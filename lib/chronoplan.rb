@@ -5,6 +5,8 @@ class Chronoplan
 	# Constants
 	RADIUS = { 0 => 54, 1 => 72, 2 => 90, -1 => 36 }
 	ROOT = File.expand_path(File.join(File.dirname(__FILE__), "..")) # Get the root directory
+	OUT_EXT = '.png'
+	OVERLAY = '_overlay'
 
 	def initialize(input_file)
 		@input_file = input_file	
@@ -12,6 +14,8 @@ class Chronoplan
 
 	def process
 		puts "Processing '#{@input_file}'."
+		# output_base = File.join(File.dirname(@input_file), File.basename(@input_file))
+		output_base = @input_file[0..-(File.extname(@input_file).length + 1)]
 
 		image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
 		overlay = QuickMagick::Image.solid(image.width, image.height)
@@ -44,9 +48,9 @@ class Chronoplan
 		end
 
 		overlay.draw_image("Dst_Out", 0, 0, 0, 0, %Q{\\"#{ROOT}/images/Hole.png\\"})
-		overlay.convert("OVERLAY.png")
+		overlay.convert(output_base + OVERLAY + OUT_EXT)
 
-		image.draw_image("Over",0,0,0,0,"OVERLAY.png")
-		image.convert("output.png")
+		image.draw_image("Over", 0, 0, 0, 0, output_base + OVERLAY + OUT_EXT)
+		image.convert(output_base + OUT_EXT)
 	end
 end # class
