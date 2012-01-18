@@ -1,0 +1,115 @@
+require 'erb'
+
+TEMPLATE = %q{
+    push graphic-context
+        stroke '<%= stroke_string %>'
+        fill '<%= fill_string %>'
+        path 'M <%= CENTERX %> <%= CENTERY %>
+              m <%=  inner_radius * Math.cos(start_arc_time) %>
+                <%= -inner_radius * Math.sin(start_arc_time) %>
+              m <%=  (outer_radius-inner_radius) * Math.cos(start_arc_time) %>
+                <%= -(outer_radius-inner_radius) * Math.sin(start_arc_time) %>
+              a <%= outer_radius %>,<%= outer_radius %> 0
+                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,0
+                <%= outer_radius * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
+                <%= -outer_radius * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>
+              l <%=  (inner_radius-outer_radius) * Math.cos(end_arc_time) %>
+                <%= -(inner_radius-outer_radius) * Math.sin(end_arc_time) %>
+              a <%= inner_radius %>,<%= inner_radius %> 0
+                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
+                <%=  inner_radius * (Math.cos(start_arc_time) - Math.cos(end_arc_time)) %>,
+                <%= -inner_radius * (Math.sin(start_arc_time) - Math.sin(end_arc_time)) %> Z'
+    pop graphic-context}
+TEMPLATE2 = %q{
+    push graphic-context
+        stroke '<%= stroke_string %>'
+        fill '<%= fill_string %>'
+        path 'M <%= CENTERX %> <%= CENTERY %>
+              m <%=  (outer_radius-eps) * Math.cos(start_arc_time) %>
+                <%= -(outer_radius-eps) * Math.sin(start_arc_time) %>
+              l <%=  eps * Math.cos(start_arc_time) %>
+                <%= -eps * Math.sin(start_arc_time) %>'
+    pop graphic-context
+}
+
+RADIUS = {-2 => 48, -1 => 72, 0 => 108, 1 => 144, 2 => 180}
+CENTERX=190
+CENTERY=190
+LITTLE_RADIUS = 8
+
+puts <<EOM
+push graphic-context
+    viewbox 0 0 380 380
+    push graphic-context
+        stroke 'none'
+        fill 'white'
+        path 'M #{CENTERX} #{CENTERY}
+              m 0 #{RADIUS[-1]}
+              a #{RADIUS[-1]}  #{RADIUS[-1]} 0 0,0
+                #{RADIUS[-1]} -#{RADIUS[-1]}
+              a #{RADIUS[-1]}  #{RADIUS[-1]} 0 1,0
+               -#{RADIUS[-1]}  #{RADIUS[-1]}'
+    pop graphic-context
+EOM
+templ = ERB.new(TEMPLATE)
+tmpl2 = ERB.new(TEMPLATE2)
+[0,30,60].map {|offset|
+    inner_radius = RADIUS[-2]
+    outer_radius = RADIUS[-1]
+    start_arc_time = Math::PI*(180+offset)/180
+    end_arc_time   = Math::PI*(210+offset)/180
+    stroke_string = 'rgb(97,97,97)'
+    fill_string   = 'rgba(0,0,0,',(0.3-offset/300.0),')'
+    puts templ.result(binding)
+    [7.5,15,22.5].map {|bump|
+        eps = (bump == 15 ? 0.2 : 0.15)*(RADIUS[-1]-RADIUS[-2])
+        outer_radius = RADIUS[-2]+eps
+        start_arc_time = Math::PI*(180+offset+bump)/180
+        puts tmpl2.result(binding)
+    }
+}
+[0,30,60].map {|start|
+    index = 2-start/30
+    [0,90,180,270].map {|offset|
+        inner_radius = RADIUS[-1]
+        outer_radius = RADIUS[index]
+        start_arc_time = Math::PI*(start+offset)/180
+        end_arc_time   = Math::PI*(start+offset+30)/180
+        stroke_string = 'black'
+        fill_string   = 'white'
+        puts templ.result(binding)
+        [7.5,15,22.5].map {|bump|
+            eps = (bump == 15 ? 0.125 : 0.075)*(RADIUS[2]-RADIUS[0])
+            start_arc_time = Math::PI*(start+offset+bump)/180
+            puts tmpl2.result(binding)
+        }
+    }
+}
+[0,90,180,270].map {|angle|
+    arc = Math::PI*angle/180.0
+    puts <<-EOM
+        push graphic-context
+            stroke 'black'
+            fill 'white'
+            path 'M #{CENTERX} #{CENTERY}
+                  m #{RADIUS[2] * Math.cos(arc)} #{RADIUS[2] * Math.sin(arc)}
+                  m 0 #{LITTLE_RADIUS}
+                  a #{LITTLE_RADIUS}, #{LITTLE_RADIUS} 0 0,0
+                    #{LITTLE_RADIUS} -#{LITTLE_RADIUS}
+                  a #{LITTLE_RADIUS}, #{LITTLE_RADIUS} 0 1,0
+                   -#{LITTLE_RADIUS}  #{LITTLE_RADIUS}'
+        pop graphic-context
+EOM
+}
+puts <<EOM
+    push graphic-context
+        stroke 'black'
+        fill 'none'
+        stroke-width '0.5'
+        stroke-dasharray 5 5
+        path 'm #{CENTERX-RADIUS[2]-LITTLE_RADIUS} #{CENTERY}
+              a #{RADIUS[2]+LITTLE_RADIUS}, #{RADIUS[2]+LITTLE_RADIUS} 0 0,1
+                #{RADIUS[2]+LITTLE_RADIUS} -#{RADIUS[2]+LITTLE_RADIUS}'
+    pop graphic-context
+EOM
+puts "pop graphic-context\n"
