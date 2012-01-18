@@ -58,7 +58,7 @@ tmpl2 = ERB.new(TEMPLATE2)
     outer_radius = RADIUS[-1]
     start_arc_time = Math::PI*(180+offset)/180
     end_arc_time   = Math::PI*(210+offset)/180
-    stroke_string = 'rgb(97,97,97)'
+    stroke_string = 'rgba(97,97,97,0.5)'
     fill_string   = 'rgba(0,0,0,',(0.3-offset/300.0),')'
     puts templ.result(binding)
     [7.5,15,22.5].map {|bump|
@@ -105,8 +105,7 @@ puts <<EOM
     push graphic-context
         stroke 'black'
         fill 'none'
-        stroke-width '0.5'
-        stroke-dasharray 5 5
+        stroke-dasharray 10 10
         path 'm #{CENTERX-RADIUS[2]-LITTLE_RADIUS} #{CENTERY}
               a #{RADIUS[2]+LITTLE_RADIUS}, #{RADIUS[2]+LITTLE_RADIUS} 0 0,1
                 #{RADIUS[2]+LITTLE_RADIUS} -#{RADIUS[2]+LITTLE_RADIUS}'
