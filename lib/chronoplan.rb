@@ -4,7 +4,7 @@ require 'erb'
 
 class Chronoplan
 	# Constants
-	RADIUS = { 0 => 54, 1 => 72, 2 => 90, -1 => 36 }
+	RADIUS = { 0 => 54, 1 => 72, 2 => 90, -1 => 36, -2 => 24}
         CENTERX=107
         CENTERY=102
         INNER_RADIUS = RADIUS[-1]
