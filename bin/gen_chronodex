@@ -78,11 +78,17 @@ tmpl2 = ERB.new(TEMPLATE2)
         stroke_string = 'black'
         fill_string   = 'white'
         puts templ.result(binding)
-        [7.5,15,22.5].map {|bump|
-            eps = (bump == 15 ? 0.125 : 0.075)*(RADIUS[2]-RADIUS[0])
-            start_arc_time = Math::PI*(start+offset+bump)/180
-            puts tmpl2.result(binding)
+        [7.5,15.0,22.5,30.0].map {|bump|
+            eps = 0.075*(RADIUS[2]-RADIUS[0])
+            inner_radius = outer_radius - eps
+            start_arc_time = Math::PI*(start+offset+bump-7.5)/180
+            end_arc_time   = Math::PI*(start+offset+bump)/180
+            fill_string = (bump % 1.0 > 0.1 ? 'black' : 'white')
+            puts templ.result(binding)
         }
+        eps = 0.125*(RADIUS[2]-RADIUS[0])
+        start_arc_time = Math::PI*(start+offset+15.0)/180
+        puts tmpl2.result(binding)
     }
 }
 [0,90,180,270].map {|angle|
