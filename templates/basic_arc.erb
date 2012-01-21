@@ -1,0 +1,21 @@
+    push graphic-context
+        stroke 'none'
+        fill '<%= rgba_string %>'
+        path 'M <%= CENTERX %> <%= CENTERY %>
+              m <%=  INNER_RADIUS * Math.cos(start_arc_time) %>
+                <%= -INNER_RADIUS * Math.sin(start_arc_time) %>
+              l <%=  (outer_radius-INNER_RADIUS) * Math.cos(start_arc_time) %>
+                <%= -(outer_radius-INNER_RADIUS) * Math.sin(start_arc_time) %>
+              a <%= outer_radius %>,<%= outer_radius %> 0
+                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
+                <%= outer_radius * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
+                <%= -outer_radius * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>
+              l <%=  (INNER_RADIUS-outer_radius) * Math.cos(end_arc_time) %>
+                <%= -(INNER_RADIUS-outer_radius) * Math.sin(end_arc_time) %>
+              a <%= INNER_RADIUS %>,<%= INNER_RADIUS %> 0
+                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,0
+                <%=  INNER_RADIUS * (Math.cos(start_arc_time) - Math.cos(end_arc_time)) %>,
+                <%= -INNER_RADIUS * (Math.sin(start_arc_time) - Math.sin(end_arc_time)) %>
+              z'
+    pop graphic-context
+
