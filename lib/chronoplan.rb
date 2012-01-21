@@ -9,7 +9,7 @@ class Chronoplan
         CENTERY=102
         INNER_RADIUS = RADIUS[-1]
 	ROOT = File.expand_path(File.join(File.dirname(__FILE__), "..")) # Get the root directory
-        BASIC_ARC = ERB.new File.new("#{ROOT}/templates/basic_arc.erb").read
+        INTERIOR_ARC = ERB.new File.new("#{ROOT}/templates/basic_arc.erb").read
         BORDERS_ARC = ERB.new File.new("#{ROOT}/templates/border_arc.erb").read
 
 	def initialize(input_file)
@@ -30,10 +30,10 @@ class Chronoplan
 
 			outer_radius_index = (parsed[0].to_f.modulo(90) / 30).floor
                         outer_radius = RADIUS[outer_radius_index]
-                        #puts BASIC_ARC.result(binding)
-                        rgba_start_line = 'none'
+                        #puts INTERIOR_ARC.result(binding)
+                        rgba_start_line = rgba_string
                         rgba_end_line = rgba_string
-                        rgba_inside_arc = 'none'
+                        rgba_inside_arc = rgba_string
                         rgba_outside_arc = rgba_string
                         puts BORDERS_ARC.result(binding)
 		end
