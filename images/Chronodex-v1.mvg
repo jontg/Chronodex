@@ -1,0 +1,815 @@
+push graphic-context
+    viewbox 0 0 380 380
+    push graphic-context
+        stroke 'none'
+        fill 'white'
+        path 'M 190 190
+              m 0 72
+              a 72  72 0 0,0
+                72 -72
+              a 72  72 0 1,0
+               -72  72'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.3)'
+        path 'M 190 190
+              m -48.0
+                -5.8783046359073e-15
+              m -24.0
+                -2.93915231795365e-15
+              a 72,72 0
+                0,0
+                9.64617092752042,
+                36.0
+              l 20.7846096908265
+                -12.0
+              a 48,48 0
+                0,1
+                -6.43078061834695,
+                -24.0 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.3)'
+        path 'M 190 190
+              m -47.5893533459429
+                6.26525722656246
+              l -3.56920150094572
+                0.469894291992185'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.3)'
+        path 'M 190 190
+              m -46.3644396618753
+                12.423314164921
+              l -4.63644396618753
+                1.2423314164921'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.3)'
+        path 'M 190 190
+              m -44.3462175605418
+                18.3688047535243
+              l -3.32596631704063
+                1.37766035651432'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.2)'
+        path 'M 190 190
+              m -41.5692193816531
+                24.0
+              m -20.7846096908265
+                12.0
+              a 72,72 0
+                0,0
+                26.3538290724795,
+                26.3538290724796
+              l 12.0
+                -20.7846096908265
+              a 48,48 0
+                0,1
+                -17.569219381653,
+                -17.569219381653 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.2)'
+        path 'M 190 190
+              m -38.0809603339793
+                29.2205485924186
+              l -2.85607202504845
+                2.19154114443139'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.2)'
+        path 'M 190 190
+              m -33.9411254969543
+                33.9411254969543
+              l -3.39411254969543
+                3.39411254969543'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.2)'
+        path 'M 190 190
+              m -29.2205485924186
+                38.0809603339793
+              l -2.19154114443139
+                2.85607202504845'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.1)'
+        path 'M 190 190
+              m -24.0
+                41.569219381653
+              m -12.0
+                20.7846096908265
+              a 72,72 0
+                0,0
+                36.0,
+                9.64617092752044
+              l 4.40872847693047e-15
+                -24.0
+              a 48,48 0
+                0,1
+                -24.0,
+                -6.43078061834696 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.1)'
+        path 'M 190 190
+              m -18.3688047535243
+                44.3462175605418
+              l -1.37766035651432
+                3.32596631704063'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.1)'
+        path 'M 190 190
+              m -12.423314164921
+                46.3644396618753
+              l -1.2423314164921
+                4.63644396618753'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'rgba(97,97,97,0.5)'
+        fill 'rgba(0,0,0,0.1)'
+        path 'M 190 190
+              m -6.26525722656248
+                47.5893533459429
+              l -0.469894291992186
+                3.56920150094572'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 72.0
+                -0.0
+              m 108.0
+                -0.0
+              a 180,180 0
+                0,0
+                -24.115427318801,
+                -90.0
+              l -93.5307436087194
+                54.0
+              a 72,72 0
+                0,1
+                9.64617092752041,
+                36.0 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 173.106272795867
+                -22.789873161621
+              l 5.35380225141858
+                -0.704841437988278'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 161.309366376471
+                -66.8165272909447
+              l 4.98894947556095
+                -2.06649053477148'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 165.173316295431
+                -44.258056712531
+              l 8.69333243660162
+                -2.32937140592269'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 4.40872847693047e-15
+                -72.0
+              m 6.61309271539571e-15
+                -108.0
+              a 180,180 0
+                0,0
+                -90.0,
+                24.115427318801
+              l 54.0
+                93.5307436087194
+              a 72,72 0
+                0,1
+                36.0,
+                -9.64617092752041 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -22.789873161621
+                -173.106272795867
+              l -0.704841437988277
+                -5.35380225141858'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -66.8165272909447
+                -161.309366376471
+              l -2.06649053477148
+                -4.98894947556095'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -44.2580567125311
+                -165.173316295431
+              l -2.32937140592269
+                -8.69333243660162'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -72.0
+                -8.81745695386094e-15
+              m -108.0
+                -1.32261854307914e-14
+              a 180,180 0
+                0,0
+                24.1154273188011,
+                90.0
+              l 93.5307436087194
+                -54.0
+              a 72,72 0
+                0,1
+                -9.64617092752042,
+                -36.0 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -173.106272795867
+                22.789873161621
+              l -5.35380225141858
+                0.704841437988277'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -161.309366376471
+                66.8165272909446
+              l -4.98894947556095
+                2.06649053477148'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -165.173316295431
+                44.258056712531
+              l -8.69333243660162
+                2.32937140592268'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -1.32261854307914e-14
+                72.0
+              m -1.98392781461871e-14
+                108.0
+              a 180,180 0
+                0,0
+                90.0,
+                -24.1154273188011
+              l -54.0
+                -93.5307436087194
+              a 72,72 0
+                0,1
+                -36.0,
+                9.64617092752042 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 22.7898731616211
+                173.106272795867
+              l 0.704841437988281
+                5.35380225141858'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 66.8165272909447
+                161.309366376471
+              l 2.06649053477149
+                4.98894947556095'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 44.2580567125311
+                165.173316295431
+              l 2.32937140592269
+                8.69333243660161'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 62.3538290724796
+                -36.0
+              m 62.3538290724796
+                -36.0
+              a 144,144 0
+                0,0
+                -52.7076581449592,
+                -52.7076581449592
+              l -36.0
+                62.3538290724796
+              a 72,72 0
+                0,1
+                26.3538290724796,
+                26.3538290724796 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 109.958772964365
+                -84.3743340606087
+              l 4.28410803757267
+                -3.28731171664709'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 84.3743340606087
+                -109.958772964365
+              l 3.28731171664709
+                -4.28410803757267'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 95.4594154601839
+                -95.4594154601839
+              l 6.36396103067893
+                -6.36396103067893'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -36.0
+                -62.3538290724796
+              m -36.0
+                -62.3538290724796
+              a 144,144 0
+                0,0
+                -52.7076581449592,
+                52.7076581449592
+              l 62.3538290724796
+                36.0
+              a 72,72 0
+                0,1
+                26.3538290724796,
+                -26.3538290724796 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -84.3743340606087
+                -109.958772964365
+              l -3.28731171664709
+                -4.28410803757267'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -109.958772964365
+                -84.3743340606086
+              l -4.28410803757267
+                -3.28731171664709'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -95.4594154601839
+                -95.4594154601839
+              l -6.36396103067893
+                -6.36396103067893'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -62.3538290724796
+                36.0
+              m -62.3538290724796
+                36.0
+              a 144,144 0
+                0,0
+                52.7076581449591,
+                52.7076581449591
+              l 36.0
+                -62.3538290724796
+              a 72,72 0
+                0,1
+                -26.3538290724795,
+                -26.3538290724796 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -109.958772964365
+                84.3743340606087
+              l -4.28410803757267
+                3.28731171664709'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -84.3743340606087
+                109.958772964365
+              l -3.28731171664709
+                4.28410803757267'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -95.4594154601839
+                95.4594154601839
+              l -6.36396103067893
+                6.36396103067893'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 36.0
+                62.3538290724796
+              m 36.0
+                62.3538290724796
+              a 144,144 0
+                0,0
+                52.7076581449591,
+                -52.7076581449591
+              l -62.3538290724796
+                -36.0
+              a 72,72 0
+                0,1
+                -26.3538290724796,
+                26.3538290724795 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 84.3743340606087
+                109.958772964365
+              l 3.28731171664709
+                4.28410803757267'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 109.958772964365
+                84.3743340606087
+              l 4.28410803757267
+                3.28731171664709'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 95.4594154601839
+                95.4594154601839
+              l 6.36396103067893
+                6.36396103067893'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 36.0
+                -62.3538290724796
+              m 18.0
+                -31.1769145362398
+              a 108,108 0
+                0,0
+                -54.0,
+                -14.4692563912806
+              l -2.20436423846524e-15
+                36.0
+              a 72,72 0
+                0,1
+                36.0,
+                9.64617092752042 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 39.2633201606582
+                -94.790040035658
+              l 2.06649053477148
+                -4.98894947556095'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 13.3919873217773
+                -101.722242776953
+              l 0.704841437988279
+                -5.35380225141858'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 25.6230854651496
+                -95.6266568026178
+              l 2.32937140592269
+                -8.69333243660162'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -62.3538290724796
+                -36.0
+              m -31.1769145362398
+                -18.0
+              a 108,108 0
+                0,0
+                -14.4692563912806,
+                54.0
+              l 36.0
+                4.40872847693047e-15
+              a 72,72 0
+                0,1
+                9.64617092752041,
+                -36.0 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -94.790040035658
+                -39.2633201606582
+              l -4.98894947556095
+                -2.06649053477148'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -101.722242776953
+                -13.3919873217773
+              l -5.35380225141858
+                -0.704841437988278'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -95.6266568026177
+                -25.6230854651496
+              l -8.69333243660161
+                -2.32937140592269'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -36.0
+                62.3538290724796
+              m -18.0
+                31.1769145362398
+              a 108,108 0
+                0,0
+                54.0,
+                14.4692563912807
+              l 6.61309271539571e-15
+                -36.0
+              a 72,72 0
+                0,1
+                -36.0,
+                -9.64617092752044 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -39.2633201606582
+                94.790040035658
+              l -2.06649053477148
+                4.98894947556095'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -13.3919873217773
+                101.722242776953
+              l -0.704841437988279
+                5.35380225141858'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m -25.6230854651495
+                95.6266568026178
+              l -2.32937140592269
+                8.69333243660162'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 62.3538290724796
+                36.0
+              m 31.1769145362398
+                18.0
+              a 108,108 0
+                0,0
+                14.4692563912807,
+                -54.0
+              l -36.0
+                -8.81745695386094e-15
+              a 72,72 0
+                0,1
+                -9.64617092752044,
+                36.0 Z'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 94.790040035658
+                39.2633201606582
+              l 4.98894947556095
+                2.06649053477148'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 101.722242776953
+                13.3919873217773
+              l 5.35380225141858
+                0.704841437988279'
+    pop graphic-context
+
+    push graphic-context
+        stroke 'black'
+        fill 'white'
+        path 'M 190 190
+              m 95.6266568026178
+                25.6230854651495
+              l 8.69333243660162
+                2.32937140592269'
+    pop graphic-context
+        push graphic-context
+            stroke 'black'
+            fill 'white'
+            path 'M 190 190
+                  m 180.0 0.0
+                  m 0 8
+                  a 8, 8 0 0,0
+                    8 -8
+                  a 8, 8 0 1,0
+                   -8  8'
+        pop graphic-context
+        push graphic-context
+            stroke 'black'
+            fill 'white'
+            path 'M 190 190
+                  m 1.10218211923262e-14 180.0
+                  m 0 8
+                  a 8, 8 0 0,0
+                    8 -8
+                  a 8, 8 0 1,0
+                   -8  8'
+        pop graphic-context
+        push graphic-context
+            stroke 'black'
+            fill 'white'
+            path 'M 190 190
+                  m -180.0 2.20436423846524e-14
+                  m 0 8
+                  a 8, 8 0 0,0
+                    8 -8
+                  a 8, 8 0 1,0
+                   -8  8'
+        pop graphic-context
+        push graphic-context
+            stroke 'black'
+            fill 'white'
+            path 'M 190 190
+                  m -3.30654635769785e-14 -180.0
+                  m 0 8
+                  a 8, 8 0 0,0
+                    8 -8
+                  a 8, 8 0 1,0
+                   -8  8'
+        pop graphic-context
+    push graphic-context
+        stroke 'black'
+        fill 'none'
+        stroke-dasharray 10 10
+        path 'm 2 190
+              a 188, 188 0 0,1
+                188 -188'
+    pop graphic-context
+pop graphic-context
