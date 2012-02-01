@@ -1,10 +1,10 @@
 -90.0;   -45.0;   rgba( 35,106,135,0.45); Pre-start thing
--45.0;   0.0;     rgba(235, 06,235,0.45); Pre-start thing
+-45.0;   0.0;     rgba(235,206,235,0.45); Pre-start thing
 0.0;     30.0;    rgba(135,206,135,0.85); First Thing
 30.0;    60.0;    rgba(135,106,135,0.85); Second Thing
 60.0;    75.0;    rgba(235,206,135,0.85); Example Text
 75.0;    95.0;    rgba(235,106,135,0.85); Things happen
-95.0;    215.0;   rgba(135,206,235,0.85); Exercise!
+95.0;    215.0;   rgba(135,206,235,0.85); Exercise
 215.0;   275.0;   rgba(135,106,235,0.85); Sleeping
 275.0;   335.0;   rgba(235,206,235,0.85); Strange Evnts
 335.0;   360.0;   rgba(235,106,235,0.85); Asdfdfff
