@@ -35,6 +35,7 @@ class Chronoplan
                         outer_radius_index = -2 if parsed[0].to_f < 0
                         outer_radius_index = 3 if parsed[0].to_f >= 360
                         outer_radius = RADIUS[outer_radius_index]
+
                         temp_file.write INTERIOR_ARC.result(binding) if parsed[0].to_f < 360
                         temp_file.write OUTSIDE_ARC.result(binding) if parsed[0].to_f >= 360
                         rgba_start_line = rgba_string
@@ -44,11 +45,12 @@ class Chronoplan
                         temp_file.write BORDERS_ARC.result(binding) if parsed[0].to_f < 360
 		end
                 temp_file.write "pop graphic-context\n"
+                temp_file.close
 
                 image = QuickMagick::Image.read(temp_file.path).first
                 image.append_to_operators("background","none")
                 image.append_to_operators("density","720")
                 image.convert("output.png")
-                temp_file.close!
+                temp_file.unlink
 	end
 end # class
