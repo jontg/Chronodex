@@ -1,6 +1,7 @@
-#require 'rubygems'
+require 'rubygems'
+require 'tempfile'
 require 'erb'
-#require 'quick_magick'
+require 'quick_magick'
 
 class Chronoplan
 	# Constants
@@ -20,9 +21,12 @@ class Chronoplan
 	def process
 		# puts "Processing '#{@input_file}'."
 		# image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
+                temp_file = Tempfile.new(['ScheduleOverlay','.mvg'])
+                puts temp_file.path
+                temp_file.write File.new("#{ROOT}/images/Chronodex.mvg").read
 
-                puts "push graphic-context"
-                puts "viewbox 0 0 380 380"
+                temp_file.write "push graphic-context\n"
+                temp_file.write "viewbox 0 0 380 380\n"
 		File.foreach(@input_file) do |line|
 			parsed = line.split(";").map { |tmp| tmp.strip }
 			start_arc_time = -Math::PI / 180 * (parsed[0].to_f-180)
@@ -33,14 +37,20 @@ class Chronoplan
                         outer_radius_index = -2 if parsed[0].to_f < 0
                         outer_radius_index = 3 if parsed[0].to_f >= 360
                         outer_radius = RADIUS[outer_radius_index]
-                        puts INTERIOR_ARC.result(binding) if parsed[0].to_f < 360
-                        puts OUTSIDE_ARC.result(binding) if parsed[0].to_f >= 360
+                        temp_file.write INTERIOR_ARC.result(binding) if parsed[0].to_f < 360
+                        temp_file.write OUTSIDE_ARC.result(binding) if parsed[0].to_f >= 360
                         rgba_start_line = rgba_string
                         rgba_end_line = rgba_string
                         rgba_inside_arc = rgba_string
                         rgba_outside_arc = rgba_string
-                        puts BORDERS_ARC.result(binding) if parsed[0].to_f < 360
+                        temp_file.write BORDERS_ARC.result(binding) if parsed[0].to_f < 360
 		end
-                puts "pop graphic-context"
+                temp_file.write "pop graphic-context\n"
+
+                image = QuickMagick::Image.read(temp_file.path).first
+                image.append_to_operators("background","none")
+                image.append_to_operators("density","720")
+                image.convert("output.png")
+                temp_file.close!
 	end
 end # class
