@@ -23,7 +23,7 @@ class Chronoplan
 		# image = QuickMagick::Image.read("#{ROOT}/images/Chronodex-trim.png").first
                 temp_file = Tempfile.new(['ScheduleOverlay','.mvg'])
                 puts temp_file.path
-                temp_file.write File.new("#{ROOT}/images/Chronodex.mvg").read
+                temp_file.write File.new("#{ROOT}/images/Chronodex-v2.mvg").read
 
                 temp_file.write "push graphic-context\n"
                 temp_file.write "viewbox 0 0 380 380\n"
