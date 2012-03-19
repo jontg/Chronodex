@@ -2,33 +2,33 @@
         fill 'none'
         stroke '<%= rgba_start_line %>'
         path 'M <%= CENTERX %> <%= CENTERY %>
-              m <%=  INNER_RADIUS * Math.cos(start_arc_time) %>
-                <%= -INNER_RADIUS * Math.sin(start_arc_time) %>
-              l <%=  (outer_radius-INNER_RADIUS) * Math.cos(start_arc_time) %>
-                <%= -(outer_radius-INNER_RADIUS) * Math.sin(start_arc_time) %>'
+              m <%=  INNER_RADIUS * Math.cos(-start_arc_time) %>
+                <%= -INNER_RADIUS * Math.sin(-start_arc_time) %>
+              l <%=  (outer_radius-INNER_RADIUS) * Math.cos(-start_arc_time) %>
+                <%= -(outer_radius-INNER_RADIUS) * Math.sin(-start_arc_time) %>'
 
         stroke '<%= rgba_outside_arc %>'
         path 'M <%= CENTERX %> <%= CENTERY %>
-              m <%=  outer_radius * Math.cos(start_arc_time) %>
-                <%= -outer_radius * Math.sin(start_arc_time) %>
+              m <%=  outer_radius * Math.cos(-start_arc_time) %>
+                <%= -outer_radius * Math.sin(-start_arc_time) %>
               a <%= outer_radius %>,<%= outer_radius %> 0
-                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
-                <%= outer_radius * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
-                <%= -outer_radius * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>'
+                <%= (-start_arc_time + end_arc_time < Math::PI) ? '0' : '1' %>,1
+                <%= outer_radius * (Math.cos(-end_arc_time) - Math.cos(-start_arc_time)) %>,
+                <%= -outer_radius * (Math.sin(-end_arc_time) - Math.sin(-start_arc_time)) %>'
 
         stroke '<%= rgba_end_line %>'
         path 'M <%= CENTERX %> <%= CENTERY %>
-              m <%=  INNER_RADIUS * Math.cos(end_arc_time) %>
-                <%= -INNER_RADIUS * Math.sin(end_arc_time) %>
-              l <%=  (outer_radius-INNER_RADIUS) * Math.cos(end_arc_time) %>
-                <%= -(outer_radius-INNER_RADIUS) * Math.sin(end_arc_time) %>'
+              m <%=  INNER_RADIUS * Math.cos(-end_arc_time) %>
+                <%= -INNER_RADIUS * Math.sin(-end_arc_time) %>
+              l <%=  (outer_radius-INNER_RADIUS) * Math.cos(-end_arc_time) %>
+                <%= -(outer_radius-INNER_RADIUS) * Math.sin(-end_arc_time) %>'
 
         stroke '<%= rgba_inside_arc %>'
         path 'M <%= CENTERX %> <%= CENTERY %>
-              m <%=  INNER_RADIUS * Math.cos(start_arc_time) %>
-                <%= -INNER_RADIUS * Math.sin(start_arc_time) %>
+              m <%=  INNER_RADIUS * Math.cos(-start_arc_time) %>
+                <%= -INNER_RADIUS * Math.sin(-start_arc_time) %>
               a <%= INNER_RADIUS %>,<%= INNER_RADIUS %> 0
-                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
-                <%=  INNER_RADIUS * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
-                <%= -INNER_RADIUS * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>'
+                <%= (-start_arc_time + end_arc_time < Math::PI) ? '0' : '1' %>,1
+                <%=  INNER_RADIUS * (Math.cos(-end_arc_time) - Math.cos(-start_arc_time)) %>,
+                <%= -INNER_RADIUS * (Math.sin(-end_arc_time) - Math.sin(-start_arc_time)) %>'
     pop graphic-context

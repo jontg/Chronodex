@@ -2,10 +2,10 @@
         stroke '<%= rgba_string %>'
         fill 'none'
         path 'M <%= CENTERX %> <%= CENTERY %>
-              m <%=  outer_radius * Math.cos(start_arc_time) %>
-                <%= -outer_radius * Math.sin(start_arc_time) %>
+              m <%=  outer_radius * Math.cos(-start_arc_time) %>
+                <%= -outer_radius * Math.sin(-start_arc_time) %>
               a <%= outer_radius %>,<%= outer_radius %> 0
-                <%= (start_arc_time - end_arc_time < Math::PI) ? '0' : '1' %>,1
-                <%= outer_radius * (Math.cos(end_arc_time) - Math.cos(start_arc_time)) %>,
-                <%= -outer_radius * (Math.sin(end_arc_time) - Math.sin(start_arc_time)) %>'
+                <%= (-start_arc_time + end_arc_time < Math::PI) ? '0' : '1' %>,1
+                <%= outer_radius * (Math.cos(-end_arc_time) - Math.cos(-start_arc_time)) %>,
+                <%= -outer_radius * (Math.sin(-end_arc_time) - Math.sin(-start_arc_time)) %>'
     pop graphic-context
