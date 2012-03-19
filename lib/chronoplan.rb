@@ -37,9 +37,6 @@ class Chronoplan
                         outer_radius_index = -2 if start_arc_time < NINE_AM
                         outer_radius_index = 3 if start_arc_time >= NINE_PM
                         outer_radius = RADIUS[outer_radius_index]
-                        outer_radius = RADIUS[-1]+20 if start_arc_time < NINE_PM
-                        outer_radius = RADIUS[-1]-20 if start_arc_time < NINE_AM
-                        outer_radius = RADIUS[3]-1 if start_arc_time >= NINE_PM
 
                         temp_file.write INTERIOR_ARC.result(binding) if start_arc_time < NINE_PM
                         temp_file.write OUTSIDE_ARC.result(binding) if start_arc_time >= NINE_PM
@@ -76,9 +73,6 @@ class Chronoplan
                         outer_radius_index = -2 if start_arc_time < NINE_AM
                         outer_radius_index = 3 if start_arc_time >= NINE_PM
                         outer_radius = RADIUS[outer_radius_index]
-                        outer_radius = RADIUS[-1]+20 if start_arc_time < NINE_PM
-                        outer_radius = RADIUS[-1]-20 if start_arc_time < NINE_AM
-                        outer_radius = RADIUS[3]-1 if start_arc_time >= NINE_PM
 
                         temp_file.write INTERIOR_ARC.result(binding) if start_arc_time < NINE_PM
                         temp_file.write OUTSIDE_ARC.result(binding) if start_arc_time >= NINE_PM
