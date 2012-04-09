@@ -7,6 +7,7 @@ require 'time'
 
 # Lib
 $:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'chronentry'
 require 'chronoplan'
 
 #=------------------------------------------------------------------------------------------------=#
@@ -40,8 +41,12 @@ class ChronoplanRunner
 	private #=--------------------------------------------------------------------------------------=#
 	
 	def run
-		chronoplan = Chronoplan.new @options[:file]
-		chronoplan.process
+		chronoplan = Chronoplan.new
+		entries = Array.new
+		File.foreach(@options[:file]) do |line|
+			entries << Chronodex.parse_from_strings(line.split(";").map { |tmp| tmp.strip })
+		end
+		chronoplan.process(entries)
 	end
 
 	protected #=------------------------------------------------------------------------------------=#
