@@ -37,3 +37,6 @@ simple text input.
 [Chronodex]: http://scription.typepad.com/blog/2011/11/scription-chronodex-weekly-planner-2012-free-download-with-the-cost-of-a-prayer.html
 [Color]: http://www.imagemagick.org/script/color.php
 [Example]: https://github.com/jontg/Chronodex/blob/master/example/schedule_sample.txt
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46850189-1/Chronodex/README.md)](https://github.com/igrigorik/ga-beacon)
+
